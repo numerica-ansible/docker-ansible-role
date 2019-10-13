@@ -1,0 +1,6 @@
+---
+# tasks file for sys.user
+- name: change user's password
+  user:
+    name: "{{ansible_user}}"
+    password: "{{ 'prime-vex' | password_hash('sha512') }}"

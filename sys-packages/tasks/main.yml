@@ -1,0 +1,9 @@
+---
+- name: check whether git is already installed
+  command: rpm -q git
+  register: result
+  changed_when: false
+  failed_when: false
+- import_tasks: install_git.yml
+  when: result.rc
+  static: false

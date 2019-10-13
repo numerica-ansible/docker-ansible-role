@@ -1,0 +1,13 @@
+---
+- name: uninstall old versions
+  yum:
+    name:
+      - git
+    state: absent
+- name: install git
+  yum:
+    name:
+      - git
+      - python3-pip
+      - sshpass
+    update_cache: true

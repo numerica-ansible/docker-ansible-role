@@ -1,0 +1,23 @@
+- hosts: all
+  roles:
+    - role: sys.docker
+      docker_centos_state: started
+      docker_centos_enabled: true
+      docker_centos_users:
+        - centos
+      become: true
+      tags:
+        - docker
+    - role: sys.users
+      become: true
+      tags:
+        - users
+    - role: sys.packages
+      become: true
+      tags:
+        - packages
+    - role: sys.motd
+      become: true
+      tags:
+        - motd
+
