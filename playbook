@@ -6,18 +6,5 @@
       docker_centos_users:
         - centos
       become: true
-      tags:
-        - docker
-    - role: sys.users
-      become: true
-      tags:
-        - users
-    - role: sys.packages
-      become: true
-      tags:
-        - packages
-    - role: sys.motd
-      become: true
-      tags:
-        - motd
+  
 
